@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Panel.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 132.0
+margin_top = 114.0
+margin_right = 481.0
+margin_bottom = 458.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 57.0
+margin_top = 112.0
+margin_right = 174.0
+margin_bottom = 141.0
+rect_scale = Vector2( 2, 2 )
+text = "a panel"
+align = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button 1" type="Button" parent="Panel"]
+margin_left = 23.0
+margin_top = 205.0
+margin_right = 155.0
+margin_bottom = 273.0
+text = "button 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button 2" type="Button" parent="Panel"]
+margin_left = 208.0
+margin_top = 207.0
+margin_right = 321.0
+margin_bottom = 276.0
+text = "Button 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="Panel"]
+wait_time = 5.0
+one_shot = true
+[connection signal="pressed" from="Panel/Button 1" to="Panel" method="_on_Button_1_pressed"]
+[connection signal="pressed" from="Panel/Button 2" to="Panel" method="_on_Button_2_pressed"]
+[connection signal="timeout" from="Panel/Timer" to="Panel" method="_on_Timer_timeout"]
