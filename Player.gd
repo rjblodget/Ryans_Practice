@@ -1,12 +1,12 @@
 extends KinematicBody2D
 
 #Force Constants
-const GRAVITY = 400
+const GRAVITY = 600
 const WALK_FORCE = 800
 const STOP_FORCE = 1300
 
 # Max speeds
-const MAX_SPEED = 400
+const MAX_SPEED = 600
 const JUMP_SPEED = 200
 const WALK_MAX_SPEED = 200
 
@@ -31,9 +31,11 @@ func _physics_process(delta):
 	# Vertical movement code. Apply gravity.
 	velocity.y = velocity.y + (GRAVITY * delta)
 	
-	# Move based on the velocity and snap to the ground.
-	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
-	
 	# Check for jumping. is_on_floor() must be called after movement code.
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = -JUMP_SPEED
+	
+	# Move based on the velocity and snap to the ground.
+	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
+	
+
