@@ -27,3 +27,10 @@ func _on_Button_2_pressed():
 
 func _on_Timer_timeout():
 	get_tree().change_scene("res://Sprite_move.tscn")
+
+
+
+
+func _on_Button_2_mouse_entered():
+	print("mouse")
+	get_node("Label").text = "Button2 mouse"

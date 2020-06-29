@@ -42,7 +42,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+[node name="OurSprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 2 )
 animation = "walk"
 

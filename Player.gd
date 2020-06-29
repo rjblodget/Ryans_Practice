@@ -13,6 +13,9 @@ const WALK_MAX_SPEED = 200
 # Global Vars
 var velocity = Vector2.ZERO
 
+func _ready():
+	$OurSprite.play("walk")
+
 
 func _physics_process(delta):
 	var walk = WALK_FORCE * (Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"))	
@@ -27,6 +30,13 @@ func _physics_process(delta):
 		
 	# Clamp to the maximum horizontal movement speed.
 	velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
+	
+	# select walk animiation
+	if velocity.x <0:
+		$OurSprite.flip_h = true
+	else:
+		$OurSprite.flip_h = false
+		
 	
 	# Vertical movement code. Apply gravity.
 	velocity.y = velocity.y + (GRAVITY * delta)
