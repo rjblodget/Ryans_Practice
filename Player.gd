@@ -13,8 +13,17 @@ const WALK_MAX_SPEED = 200
 # Global Vars
 var velocity = Vector2.ZERO
 
-func _ready():
-	$OurSprite.play("walk")
+func _input(event):
+	if event is InputEventKey:
+		if event.scancode == KEY_LEFT:
+			$OurSprite.play("walk")
+		elif event.scancode == KEY_RIGHT:
+			$OurSprite.play("walk")
+		elif event.scancode == KEY_UP:
+			$OurSprite.play("Up")
+		elif event.scancode == KEY_SPACE:
+			$OurSprite.play("Up")
+	
 
 
 func _physics_process(delta):
