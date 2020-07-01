@@ -7,7 +7,7 @@ const STOP_FORCE = 1300
 
 # Max speeds
 const MAX_SPEED = 600
-const JUMP_SPEED = 200
+const JUMP_SPEED = 400
 const WALK_MAX_SPEED = 200
 
 # Global Vars
