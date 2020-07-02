@@ -35,20 +35,6 @@ extents = Vector2( 511.571, 10 )
 [node name="Drop_test" type="Node2D"]
 script = SubResource( 1 )
 
-[node name="Player2" type="KinematicBody2D" parent="."]
-position = Vector2( 521.989, 220.062 )
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="OurSprite" type="AnimatedSprite" parent="Player2"]
-frames = SubResource( 2 )
-animation = "walk"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
-shape = SubResource( 3 )
-
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 521.989, 220.062 )
 script = ExtResource( 7 )
